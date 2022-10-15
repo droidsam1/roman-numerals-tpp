@@ -30,3 +30,26 @@ Examples of Roman numerals by cyber-dojo are as follows:
 | 50     | L        | 1000   | M       | 
 | 846    | DCCCXLVI | 1999   | MCMXCIX | 
  | 999    | CMXCIX   | 2008   | MMVIII  | 
+
+# [Transformation Priority Premise(TPP)](https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html)
+
+## The Transformations
+* ({} → nil) no code at all → code that employs nil
+* (nil → constant)
+* (constant → constant+) a simple constant to a more complex constant
+* (constant → scalar) replacing a constant with a variable or an argument
+* (statement → statements) adding more unconditional statements.
+* (unconditional → if) splitting the execution path
+* (scalar → array)
+* (array → container)
+* (statement → tail-recursion)
+* (if → while)
+* (statement → non-tail-recursion)
+* (expression → function) replacing an expression with a function or algorithm
+* (variable → assignment) replacing the value of a variable.
+* (case) adding a case (or else) to an existing switch or if
+
+
+> [I] think that the priority list is language specific... In Java, for example, we might move (if→while) and (variable→assignment) above (statement→tail-recursion) so that iteration is always preferred above recursion, and assignment is preferred above parameter passing ... because Java is not a functional language.
+
+—Robert Martin, blog post [Fib. The T-P Premise](https://blog.cleancoder.com/uncle-bob/2013/05/27/FibTPP.html)
