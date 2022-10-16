@@ -25,4 +25,9 @@ public class RomanNumeralsTest {
     public void shouldConvertFourToIV() {
         Assertions.assertEquals("IV", RomanNumerals.convertFromArabicNumber(4));
     }
+
+    @Test
+    public void shouldConvertFiveToV() {
+        Assertions.assertEquals("V", RomanNumerals.convertFromArabicNumber(5));
+    }
 }
