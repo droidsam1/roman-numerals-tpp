@@ -1,26 +1,23 @@
 package com.droidsam.app;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class RomanNumerals {
     public static String convertFromArabicNumber(int arabicNumber) {
 
-        if (arabicNumber >= 40) {
-            return "XL" + convertFromArabicNumber(arabicNumber - 40);
-        }
+        Map<Integer, String> representations = new LinkedHashMap<>();
+        representations.put(40, "XL");
+        representations.put(10, "X");
+        representations.put(9, "IX");
+        representations.put(5, "V");
+        representations.put(4, "IV");
 
-        if (arabicNumber >= 10) {
-            return "X" + convertFromArabicNumber(arabicNumber - 10);
-        }
 
-        if (arabicNumber >= 9) {
-            return "IX" + convertFromArabicNumber(arabicNumber - 9);
-        }
-
-        if (arabicNumber >= 5) {
-            return "V" + convertFromArabicNumber(arabicNumber - 5);
-        }
-
-        if (arabicNumber >= 4) {
-            return "IV" + convertFromArabicNumber(arabicNumber - 4);
+        for (Map.Entry<Integer, String> entry : representations.entrySet()) {
+            if (arabicNumber >= entry.getKey()) {
+                return entry.getValue() + convertFromArabicNumber(arabicNumber - entry.getKey());
+            }
         }
 
         return "I".repeat(arabicNumber);
