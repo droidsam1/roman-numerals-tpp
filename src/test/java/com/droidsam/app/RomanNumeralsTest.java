@@ -1,33 +1,15 @@
 package com.droidsam.app;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class RomanNumeralsTest {
 
-    @Test
-    public void shouldConvertOneToI() {
-        Assertions.assertEquals("I", RomanNumerals.convertFromArabicNumber(1));
+    @ParameterizedTest
+    @CsvSource(value = {"1, I", "2,II", "3, III", "4, IV", "5, V"})
+    public void shouldConvertToRoman(Integer arabic, String expectedRepresentation) {
+        Assertions.assertEquals(expectedRepresentation, RomanNumerals.convertFromArabicNumber(arabic));
     }
 
-    @Test
-    public void shouldConvertTwoToII() {
-        Assertions.assertEquals("II", RomanNumerals.convertFromArabicNumber(2));
-    }
-
-    @Test
-    public void shouldConvertThreeToIII() {
-        Assertions.assertEquals("III", RomanNumerals.convertFromArabicNumber(3));
-    }
-
-
-    @Test
-    public void shouldConvertFourToIV() {
-        Assertions.assertEquals("IV", RomanNumerals.convertFromArabicNumber(4));
-    }
-
-    @Test
-    public void shouldConvertFiveToV() {
-        Assertions.assertEquals("V", RomanNumerals.convertFromArabicNumber(5));
-    }
 }
