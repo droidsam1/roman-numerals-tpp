@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class RomanNumeralsTest {
 
     @ParameterizedTest
-    @CsvSource(value = {"1, I", "2,II", "3, III", "4, IV", "5, V", "6, VI", "7, VII", "8, VIII", "9, IX", "10, X"})
+    @CsvSource(value = {"1, I", "2,II", "3, III", "4, IV", "5, V", "6, VI", "7, VII", "8, VIII", "9, IX", "10, X", "11, XI", "12, XII"})
     public void shouldConvertToRoman(Integer arabic, String expectedRepresentation) {
         Assertions.assertEquals(expectedRepresentation, RomanNumerals.convertFromArabicNumber(arabic));
     }
