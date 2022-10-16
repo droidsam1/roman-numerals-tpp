@@ -14,4 +14,15 @@ public class RomanNumeralsTest {
     public void shouldConvertTwoToII() {
         Assertions.assertEquals("II", RomanNumerals.convertFromArabicNumber(2));
     }
+
+    @Test
+    public void shouldConvertThreeToIII() {
+        Assertions.assertEquals("III", RomanNumerals.convertFromArabicNumber(3));
+    }
+
+
+    @Test
+    public void shouldConvertFourToIV() {
+        Assertions.assertEquals("IV", RomanNumerals.convertFromArabicNumber(4));
+    }
 }
