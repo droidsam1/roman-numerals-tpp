@@ -4,7 +4,7 @@ public class RomanNumerals {
     public static String convertFromArabicNumber(int arabicNumber) {
 
         if (arabicNumber >= 10) {
-            return "X" + "I".repeat(arabicNumber - 10);
+            return "X" + convertFromArabicNumber(arabicNumber - 10);
         }
 
         if (arabicNumber == 9) {
