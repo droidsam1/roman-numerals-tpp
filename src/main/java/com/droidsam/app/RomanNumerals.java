@@ -7,6 +7,8 @@ public class RomanNumerals {
         romanRepresentations[4]="IV";
         romanRepresentations[5]="V";
         romanRepresentations[6]="VI";
+        romanRepresentations[7]="VII";
+        romanRepresentations[8]="VIII";
 
 
         if (romanRepresentations[arabicNumber] !=null) {
