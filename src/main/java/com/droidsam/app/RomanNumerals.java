@@ -6,20 +6,21 @@ import java.util.Map;
 public class RomanNumerals {
     public static String convertFromArabicNumber(int arabicNumber) {
 
-        Map<Integer, String> representations = new LinkedHashMap<>();
-        representations.put(40, "XL");
-        representations.put(10, "X");
-        representations.put(9, "IX");
-        representations.put(5, "V");
-        representations.put(4, "IV");
+        Map<Integer, String> dictionary = new LinkedHashMap<>();
+        dictionary.put(40, "XL");
+        dictionary.put(10, "X");
+        dictionary.put(9, "IX");
+        dictionary.put(5, "V");
+        dictionary.put(4, "IV");
+        dictionary.put(1, "I");
 
-
-        for (Map.Entry<Integer, String> entry : representations.entrySet()) {
-            if (arabicNumber >= entry.getKey()) {
-                return entry.getValue() + convertFromArabicNumber(arabicNumber - entry.getKey());
+        StringBuilder result = new StringBuilder();
+        for (Map.Entry<Integer, String> arabicToRomanEntry : dictionary.entrySet()) {
+            while (arabicNumber >= arabicToRomanEntry.getKey()) {
+                result.append(arabicToRomanEntry.getValue());
+                arabicNumber -= arabicToRomanEntry.getKey();
             }
         }
-
-        return "I".repeat(arabicNumber);
+        return result.toString();
     }
 }
