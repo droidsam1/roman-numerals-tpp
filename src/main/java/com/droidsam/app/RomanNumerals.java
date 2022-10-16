@@ -11,16 +11,16 @@ public class RomanNumerals {
             return "X" + convertFromArabicNumber(arabicNumber - 10);
         }
 
-        if (arabicNumber == 9) {
-            return "IX";
+        if (arabicNumber >= 9) {
+            return "IX" + convertFromArabicNumber(arabicNumber - 9);
         }
 
         if (arabicNumber >= 5) {
-            return "V" + "I".repeat(arabicNumber - 5);
+            return "V" + convertFromArabicNumber(arabicNumber - 5);
         }
 
-        if (arabicNumber == 4) {
-            return "IV";
+        if (arabicNumber >= 4) {
+            return "IV" + convertFromArabicNumber(arabicNumber - 4);
         }
 
         return "I".repeat(arabicNumber);
