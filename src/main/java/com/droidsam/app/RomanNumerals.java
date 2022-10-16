@@ -2,17 +2,17 @@ package com.droidsam.app;
 
 public class RomanNumerals {
     public static String convertFromArabicNumber(int arabicNumber) {
-        if (arabicNumber >= 6) {
-            return "VI";
+
+        String [] romanRepresentations = new String[10];
+        romanRepresentations[4]="IV";
+        romanRepresentations[5]="V";
+        romanRepresentations[6]="VI";
+
+
+        if (romanRepresentations[arabicNumber] !=null) {
+            return romanRepresentations[arabicNumber];
         }
 
-        if (arabicNumber == 5) {
-            return "V";
-        }
-
-        if (arabicNumber == 4) {
-            return "IV";
-        }
         return "I".repeat(arabicNumber);
     }
 }
